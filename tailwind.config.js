@@ -1,16 +1,17 @@
 const colors = require("tailwindcss/colors");
 
+// Path: tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: "jit",
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/flowbite-react/**/*.js",
+    "./node_modules/flowbite-react/**/*.tsx",
     "./pages/**/*.{js,ts,jsx,tsx}",
+    "./page_components/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-
-    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
-
-    // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./lib/**/*.{js,ts,jsx,tsx}",
+    "./public/**/*.html",
   ],
   theme: {
     container: {
@@ -124,6 +125,6 @@ module.exports = {
     // require("@tailwindcss/typography"),
     // require("@tailwindcss/aspect-ratio"),
     // require("tailwind-scrollbar"),
-    require('flowbite/plugin')
+    require("flowbite/plugin"),
   ],
-}
+};
