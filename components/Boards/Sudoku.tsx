@@ -1,0 +1,189 @@
+import loadFont from "../utils/loadFont";
+
+function Sudoku({ board }) {
+  loadFont(board.fontFamily, board.fontUrl);
+  return (
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 297 297"
+      preserveAspectRatio="xMidYMid meet"
+      style={
+        {
+          fontFamily: board.fontFamily,
+        }
+      }
+    >
+      <rect
+        x="0"
+        y="0"
+        width="297"
+        height="297"
+        fill="white"
+        stroke="black"
+        strokeWidth="2" // border
+      />
+      <line
+        x1="33"
+        y1="0"
+        x2="33"
+        y2="297"
+        fill="white"
+        stroke="black"
+        strokeWidth="2"
+      />
+      <line
+        x1="66"
+        y1="0"
+        x2="66"
+        y2="297"
+        fill="white"
+        stroke="black"
+        strokeWidth="2"
+      />
+      <line
+        x1="99"
+        y1="0"
+        x2="99"
+        y2="297"
+        fill="white"
+        stroke="black"
+        strokeWidth="4"
+      />
+      <line
+        x1="132"
+        y1="0"
+        x2="132"
+        y2="297"
+        fill="white"
+        stroke="black"
+        strokeWidth="2"
+      />
+      <line
+        x1="165"
+        y1="0"
+        x2="165"
+        y2="297"
+        fill="white"
+        stroke="black"
+        strokeWidth="2"
+      />
+      <line
+        x1="198"
+        y1="0"
+        x2="198"
+        y2="297"
+        fill="white"
+        stroke="black"
+        strokeWidth="4"
+      />
+      <line
+        x1="231"
+        y1="0"
+        x2="231"
+        y2="297"
+        fill="white"
+        stroke="black"
+        strokeWidth="2"
+      />
+      <line
+        x1="264"
+        y1="0"
+        x2="264"
+        y2="297"
+        fill="white"
+        stroke="black"
+        strokeWidth="2"
+      />
+      <line
+        x1="0"
+        y1="33"
+        x2="297"
+        y2="33"
+        fill="white"
+        stroke="black"
+        strokeWidth="2"
+      />
+      <line
+        x1="0"
+        y1="66"
+        x2="297"
+        y2="66"
+        fill="white"
+        stroke="black"
+        strokeWidth="2"
+      />
+      <line
+        x1="0"
+        y1="99"
+        x2="297"
+        y2="99"
+        fill="white"
+        stroke="black"
+        strokeWidth="4"
+      />
+      <line
+        x1="0"
+        y1="132"
+        x2="297"
+        y2="132"
+        fill="white"
+        stroke="black"
+        strokeWidth="2"
+      />
+      <line
+        x1="0"
+        y1="165"
+        x2="297"
+        y2="165"
+        fill="white"
+        stroke="black"
+        strokeWidth="2"
+      />
+      <line
+        x1="0"
+        y1="198"
+        x2="297"
+        y2="198"
+        fill="white"
+        stroke="black"
+        strokeWidth="4"
+      />
+      <line
+        x1="0"
+        y1="231"
+        x2="297"
+        y2="231"
+        fill="white"
+        stroke="black"
+        strokeWidth="2"
+      />
+      <line
+        x1="0"
+        y1="264"
+        x2="297"
+        y2="264"
+        fill="white"
+        stroke="black"
+        strokeWidth="2"
+      />
+
+      {board.board &&
+        board.board.split("").map((e, i) => {
+          return (
+            <text
+              key={`sudoku_n_${i}`}
+              x={14 + 33 * (i % 9)}
+              y={22 + 33 * Math.floor(i / 9)}
+              fill="black"
+              fontSize="16px"
+            >
+              {e !== "." ? e : ""}
+            </text>
+          );
+        })}
+    </svg>
+  );
+}
+
+export default Sudoku;
