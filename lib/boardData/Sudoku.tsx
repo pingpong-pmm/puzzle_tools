@@ -1,9 +1,10 @@
 import SudokuSvg from "../../components/Boards/Sudoku";
 
-import SudokuToolCollection from "sudokutoolcollection";
+//import SudokuToolCollection from "sudokutoolcollection";
+import Sudoku from "../games/sudoku/sudoku.js";
 import { InputEnum } from "../../components/Inputs/InputEnum";
 
-const SudokuLogic = SudokuToolCollection();
+//const SudokuLogic = SudokuToolCollection();
 
 export const data = {
   code: "000",
@@ -12,6 +13,8 @@ export const data = {
     difficulty: "easy",
     fontFamily: "Montserrat",
     fontUrl: null,
+    boardSize: "9x9",
+    boardFormat: "Numeric",
 
     instructions: {
       howToPlay: {
@@ -60,26 +63,84 @@ export const data = {
           type: InputEnum.UploadFile,
           multiple: false,
 
+        },
+        {
+          id: "boardSize",
+          title: "Board Size",
+          type: InputEnum.Select,
+          options: [
+            {label: "4x4", value: "4x4"},
+            {label: "6x6", value: "6x6"},
+            {label: "9x9", value: "9x9"},
+            {label: "16x16", value: "16x16"},
+          ],
+
+        },
+        {
+          id: "boardFormat",
+          title: "Board Format",
+          type: InputEnum.Select,
+          options: [
+            {label: "Numeric", value: "Numeric"},
+            {label: "Alphabet", value: "Alphabet"},
+            {label: "Lower Alpha", value: "Lower Alpha"},
+            {label: "Clip Art", value: "Clip Art"},
+          ],
+
         }
       ],
     },
   ],
   create: async (state) => {
-    let board = SudokuLogic.generator.generate(state.difficulty);
-    let solution = SudokuLogic.solver.solve(board);
+    let sizeArray = state.boardSize.split("x");
+    const numRows = parseInt(sizeArray[0], 10);
+    const numCols = parseInt(sizeArray[1], 10);
+    let sudoku = new Sudoku(Math.ceil(Math.sqrt(numRows)),Math.floor(Math.sqrt(numCols)));
+    let difficulty = 0.38;
+    switch (state.difficulty) {
+        case "easy":
+            difficulty = 0.38;
+            break;
+        case "medium":
+            difficulty = 0.47;
+            break;
+        case "hard":
+            difficulty = 0.5;
+            break;
+        case "very-hard":
+            difficulty = 0.65;
+            break;
+        case "insane":
+            difficulty = 0.74;
+            break;
+        case "inhuman":
+            difficulty = 0.83;
+            break;
+        default:
+            difficulty = 0.38;
+    }
+    sudoku = sudoku.set_difficulty(difficulty);
+    let board = sudoku.generateCode();
+    let solution = sudoku.solve().generateCode();
+    //let solution = SudokuLogic.solver.solve(board);
     board = {
-      board: board,
+      board: board.key,
 
       fontFamily: state.fontFamily,
-      fontUrl: state.fontUrl
+      fontUrl: state.fontUrl,
+      boardFormat: state.boardFormat,
+      boardWidth: board.width,
+      boardHeight: board.height
     }
-    console.log(board);
 
     solution = {
-      board: solution,
+      board: solution.key,
 
       fontFamily: state.fontFamily,
-      fontUrl: state.fontUrl
+      fontUrl: state.fontUrl,
+      boardFormat: state.boardFormat,
+      boardWidth: solution.width,
+      boardHeight: solution.height
     }
 
     return { board, solution };

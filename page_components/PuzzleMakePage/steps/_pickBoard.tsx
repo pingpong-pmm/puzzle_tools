@@ -22,7 +22,7 @@ for (let c in categories) {
 const boards = [
   {
     title: "Sudoku",
-    subtitle: "Standard 9x9 Sudoku Boards",
+    subtitle: "Sudoku Boards",
     image: "sudoku - Copy.PNG",
     link: "sudoku",
     categories: [categories.Numbergames, categories.Sudokulike],
