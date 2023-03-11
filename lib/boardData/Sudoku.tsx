@@ -49,45 +49,42 @@ export const data = {
           title: "Font",
           type: InputEnum.Select,
           options: [
-            {label: "Montserrat", value: "Montserrat"},
-            {label: "Times New Roman", value: "Times New Roman"},
-            {label: "Impact", value: "Impact"},
-            {label: "Bradley Hand", value: "Bradley Hand"},
+            { label: "Montserrat", value: "Montserrat" },
+            { label: "Times New Roman", value: "Times New Roman" },
+            { label: "Impact", value: "Impact" },
+            { label: "Bradley Hand", value: "Bradley Hand" },
           ],
         },
         {
           id: "fontUrl",
           title: "Upload Font (Optional)",
           hint: "Upload a font file",
-          accept:".ttf, .woff, .woff2",
+          accept: ".ttf, .woff, .woff2",
           type: InputEnum.UploadFile,
           multiple: false,
-
         },
         {
           id: "boardSize",
           title: "Board Size",
           type: InputEnum.Select,
           options: [
-            {label: "4x4", value: "4x4"},
-            {label: "6x6", value: "6x6"},
-            {label: "9x9", value: "9x9"},
-            {label: "16x16", value: "16x16"},
+            { label: "4x4", value: "4x4" },
+            { label: "6x6", value: "6x6" },
+            { label: "9x9", value: "9x9" },
+            { label: "16x16", value: "16x16" },
           ],
-
         },
         {
           id: "boardFormat",
           title: "Board Format",
           type: InputEnum.Select,
           options: [
-            {label: "Numeric", value: "Numeric"},
-            {label: "Alphabet", value: "Alphabet"},
-            {label: "Lower Alpha", value: "Lower Alpha"},
-            {label: "Clip Art", value: "Clip Art"},
+            { label: "Numeric", value: "Numeric" },
+            { label: "Alphabet", value: "Alphabet" },
+            { label: "Lower Alpha", value: "Lower Alpha" },
+            { label: "Clip Art", value: "Clip Art" },
           ],
-
-        }
+        },
       ],
     },
   ],
@@ -95,33 +92,36 @@ export const data = {
     let sizeArray = state.boardSize.split("x");
     const numRows = parseInt(sizeArray[0], 10);
     const numCols = parseInt(sizeArray[1], 10);
-    let sudoku = new Sudoku(Math.ceil(Math.sqrt(numRows)),Math.floor(Math.sqrt(numCols)));
+    let sudoku = new Sudoku(
+      Math.ceil(Math.sqrt(numRows)),
+      Math.floor(Math.sqrt(numCols))
+    );
     let difficulty = 0.38;
     switch (state.difficulty) {
-        case "easy":
-            difficulty = 0.38;
-            break;
-        case "medium":
-            difficulty = 0.47;
-            break;
-        case "hard":
-            difficulty = 0.5;
-            break;
-        case "very-hard":
-            difficulty = 0.65;
-            break;
-        case "insane":
-            difficulty = 0.74;
-            break;
-        case "inhuman":
-            difficulty = 0.83;
-            break;
-        default:
-            difficulty = 0.38;
+      case "easy":
+        difficulty = 0.38;
+        break;
+      case "medium":
+        difficulty = 0.47;
+        break;
+      case "hard":
+        difficulty = 0.5;
+        break;
+      case "very-hard":
+        difficulty = 0.65;
+        break;
+      case "insane":
+        difficulty = 0.74;
+        break;
+      case "inhuman":
+        difficulty = 0.83;
+        break;
+      default:
+        difficulty = 0.38;
     }
     sudoku = sudoku.set_difficulty(difficulty);
-    let board = sudoku.generateCode();
-    let solution = sudoku.solve().generateCode();
+    let board: any = sudoku.generateCode();
+    let solution: any = sudoku.solve().generateCode();
     //let solution = SudokuLogic.solver.solve(board);
     board = {
       board: board.key,
@@ -130,8 +130,8 @@ export const data = {
       fontUrl: state.fontUrl,
       boardFormat: state.boardFormat,
       boardWidth: board.width,
-      boardHeight: board.height
-    }
+      boardHeight: board.height,
+    };
 
     solution = {
       board: solution.key,
@@ -140,8 +140,8 @@ export const data = {
       fontUrl: state.fontUrl,
       boardFormat: state.boardFormat,
       boardWidth: solution.width,
-      boardHeight: solution.height
-    }
+      boardHeight: solution.height,
+    };
 
     return { board, solution };
   },
