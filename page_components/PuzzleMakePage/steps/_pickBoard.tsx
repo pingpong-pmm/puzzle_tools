@@ -35,6 +35,13 @@ const boards = [
     link: "maze",
     categories: [categories.Linegames, categories.Visualgames],
   },
+  {
+    title: "Thermometer",
+    subtitle: "Find the value from given thermometers",
+    image: "thermometer - Copy.PNG",
+    link: "thermometer",
+    categories: [categories.Numbergames, categories.Visualgames],
+  },
 
 ];
 
@@ -43,8 +50,9 @@ function PickBoard({ setBoardType, purchaseList }) {
   const [search, setSearch] = useState("");
 
   return (
-    <div className="flex">
-      <div className="flex flex-1 flex-row flex-wrap justify-start items-start p-4 min-h-screen w-3/4">
+    <div className="grid grid-cols-4">
+
+      <div className="col-span-3 grid grid-cols-3 gap-2 justify-start items-start p-4 min-h-screen">
         {boards &&
           boards.map((e, i) => {
             return (
@@ -54,32 +62,29 @@ function PickBoard({ setBoardType, purchaseList }) {
                 )) &&
               //   purchaseList.indexOf(e.link) > -1 &&
               e.title.toLowerCase().indexOf(search.toLowerCase()) > -1 && (
-                <button
-
-                  key={`board_${i}`}
-                  className="w-1/2 lg:w-1/4 p-2 relative"
-                  onClick={setBoardType.bind(this, e.link)}
-                >
-
-
-
-
-                  <div className=" p-6 overflow-hidden bg-white transform transition-transform hover:scale-105 cursor-pointer shadow-md">
-                    <div className="h-2/3 overflow-hidden w-full border-b">
-
+                <>
+                  <button
+                    key={`board_${i}`}
+                    className="w-full relative h-full max-h-32 bg-purple-100"
+                    onClick={setBoardType.bind(this, e.link)}
+                  >
+                    <div className="p-3 h-full overflow-hidden transform transition-transform hover:scale-105 cursor-pointer shadow-md">
+                   
+                      <div className="text-center my-2">
+                        <p className="text-2xl">{e.title}</p>
+                        <p>{e.subtitle}</p>
+                      </div>
                     </div>
-                    <div className="text-center my-2">
-                      <p className="text-2xl">{e.title}</p>
-                      <p>{e.subtitle}</p>
-                    </div>
-                  </div>
-                </button>
+                  </button>
+
+                </>
               )
             );
           })}
 
       </div>
-      <div className="hidden md:block w-0 md:w-1/3 lg:w-1/4 p-4">
+      
+      <div className="hidden md:flex col-span-1">
         <div className=" sticky top-6">
           <ComInput
             icon={"search"}

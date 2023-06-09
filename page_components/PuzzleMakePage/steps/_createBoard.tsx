@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 
 import ComInput from "../../../components/Inputs/Input";
 import { useEffect, useState } from "react";
@@ -21,7 +22,7 @@ import Link from "next/link";
 import createForm from "../components/createBoard/createForm";
 import addQuote from "../components/createBoard/addQuote";
 import addClue from "../components/createBoard/addClue";
-import {boardCollectionDB} from "../../../db/idb";
+import { boardCollectionDB } from "../../../db/idb";
 // import { fontFamily } from "html2canvas/dist/types/css/property-descriptors/font-family";
 // import LoadingSpinner from "../../../components/utils/LoadingBar";
 // import LoadingBar from "../../../components/utils/LoadingBar";
@@ -206,19 +207,19 @@ function BoardCreate({ info, token, boardType, onCreateFinish }) {
           //     data,
           //     dataVersion,
           collection.push(
-              {
-               code: boardData.code,
-                data: sudBor,
-                dataVersion: boardData.version
-              }
+            {
+              code: boardData.code,
+              data: sudBor,
+              dataVersion: boardData.version
+            }
           );
         } else {
           collection.push(
-              {
-               code: boardData.code,
-                data: await boardData.create(fD),
-                dataVersion: boardData.version
-              }
+            {
+              code: boardData.code,
+              data: await boardData.create(fD),
+              dataVersion: boardData.version
+            }
           );
         }
 
@@ -251,9 +252,8 @@ function BoardCreate({ info, token, boardType, onCreateFinish }) {
   async function uploadBoard(collection) {
     // TODO
 
-    const title = `${colName} [${dNow.getFullYear()}/${
-        dNow.getMonth() + 1
-    }/${dNow.getDate()} ${dNow.getHours()}:${dNow.getMinutes()}:${dNow.getSeconds()}]`
+    const title = `${colName} [${dNow.getFullYear()}/${dNow.getMonth() + 1
+      }/${dNow.getDate()} ${dNow.getHours()}:${dNow.getMinutes()}:${dNow.getSeconds()}]`
     const id = await boardCollectionDB.boardCollectionDB.add({
       title: title,
       boardCollection: collection
@@ -272,7 +272,7 @@ function BoardCreate({ info, token, boardType, onCreateFinish }) {
       // _info.full.data.subscription.user_type === 0 &&
       //   setRemTok(_info.full.data.subscription.token_board);
     } else {
-      alert("Error: unable to create data " );
+      alert("Error: unable to create data ");
     }
     setCreating(false);
   }
@@ -353,22 +353,13 @@ function BoardCreate({ info, token, boardType, onCreateFinish }) {
                 <div className="border border-secCol1-300 p-2 m-2 rounded-lg shadow-md">
                   <h2 className="text-xl mb-4">What to do here?</h2>
                   <p className="text-sm text-justify my-2">
-                    This is where you create your new puzzles. On your right,
-                    you can see some settings that will determine the final
-                    output of your puzzles.
-                  </p>
-                  <p className="text-sm text-justify my-2">
-                    To have a preview, press &quot;Generate Sample&quot;.
-                  </p>
-                  <p className="text-sm text-justify my-2">
-                    Then if you&apos;re satisfied with the design you are
-                    seeing, press &quot;Generate Board Data&quot; and wait for
-                    it to create all of your new boards.
-                  </p>
-                  <p className="text-sm text-justify my-2">
-                    After creating the boards, you can choose to download the
-                    boards by clicking &quot;Download Boards&quot; that will
-                    appear later after generating.
+                    This is where you create your new puzzles. On your right, you can see some settings that will determine the final output of your puzzles.
+
+                    To have a preview, press "Generate Sample".
+
+                    Then if you're satisfied with the design you are seeing, press "Generate Board Data" and wait for it to create all of your new boards.
+
+                    After creating the boards, you can choose to download the boards by clicking "Download Boards" that will appear later after generating.
                   </p>
                 </div>
               )}
@@ -379,20 +370,18 @@ function BoardCreate({ info, token, boardType, onCreateFinish }) {
                   className="overflow-hidden border border-gray-500 hover:shadow-xl mt-4 p-1 rounded-lg"
                 >
                   <span
-                    className={`${
-                      showBoard
-                        ? "bg-primCol1-500 text-white"
-                        : "bg-transparent"
-                    } p-1 rounded-lg`}
+                    className={`${showBoard
+                      ? "bg-primCol1-500 text-white"
+                      : "bg-transparent"
+                      } p-1 rounded-lg`}
                   >
                     Board
                   </span>
                   <span
-                    className={`${
-                      !showBoard
-                        ? "bg-primCol1-500 text-white"
-                        : "bg-transparent"
-                    } p-1 rounded-lg`}
+                    className={`${!showBoard
+                      ? "bg-primCol1-500 text-white"
+                      : "bg-transparent"
+                      } p-1 rounded-lg`}
                   >
                     Solution
                   </span>
@@ -400,7 +389,7 @@ function BoardCreate({ info, token, boardType, onCreateFinish }) {
               )}
 
               {fD.language === CUSTOM_WORD_LIST ||
-              (fD.author && fD.author === CUSTOM_WORD_LIST) ? (
+                (fD.author && fD.author === CUSTOM_WORD_LIST) ? (
                 boardData.code === "002" ? (
                   <div className="mt-5">
                     <Table>
@@ -693,8 +682,8 @@ function BoardCreate({ info, token, boardType, onCreateFinish }) {
                 !creating ? (
                   <>
                     {boardData &&
-                    boardData.code === "002" &&
-                    fD.language === CUSTOM_WORD_LIST ? null : (
+                      boardData.code === "002" &&
+                      fD.language === CUSTOM_WORD_LIST ? null : (
                       <ComInput
                         icon="star"
                         label="Create How Many (1-1000)"

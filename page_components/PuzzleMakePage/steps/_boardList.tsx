@@ -2,7 +2,7 @@
 import ComButton from "../../../components/Button1";
 import { formatDate } from "../../../lib/utilities";
 import { useEffect, useState } from "react";
-import {boardCollectionDB} from "../../../db/idb";
+import { boardCollectionDB } from "../../../db/idb";
 
 function BoardList({ token, setFinishBoard }) {
   const [boardList, setBoardList] = useState<any>(false);
@@ -56,29 +56,56 @@ function BoardList({ token, setFinishBoard }) {
           {boardList ? (
             boardList.simple && boardList.simple.length > 0 ? (
               boardList.simple.map((e, i) => (
-                <div
-                  key={`dlist_${i}`}
-                  className="bg-white m-1 border shadow-md p-4"
-                >
-                  <p className="text-xl p-2">{e.title}</p>
-                  <div className="flex flex-col md:flex-row">
-                    <div className="text-left text-sm px-4 flex-1">
-                      <p>Total Boards: {e.boardCollection.length}</p>
+                <>
+                  <div
+                    key={`dlist_${i}`}
+                    className="bg-white m-1 border shadow-md p-4"
+                  >
+                    <p className="text-xl p-2">{e.title}</p>
+                    <div className="flex flex-col md:flex-row">
+                      <div className="text-left text-sm px-4 flex-1">
+                        <p>Total Boards: {e.boardCollection.length}</p>
 
-                    </div>
-                    <div className="flex justify-end p-4 flex-1 items-center">
-                      <ComButton
-                        text="Download"
-                        action={setFinishBoard.bind(this, e.id)}
-                      />
-                      <ComButton
-                        action={setConfirmPopUp.bind(this, e.id)}
-                        bgColor="bg-primCol1 hover:bg-primCol1-600"
-                        text="Delete"
-                      />
+                      </div>
+                      <div className="flex justify-end p-4 flex-1 items-center">
+                        <ComButton
+                          text="Download"
+                          action={setFinishBoard.bind(this, e.id)}
+                        />
+                        <ComButton
+                          action={setConfirmPopUp.bind(this, e.id)}
+                          bgColor="bg-primCol1 hover:bg-primCol1-600"
+                          text="Delete"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
+
+                  {/* Temperature  */}
+                  {/* <div
+                    key={`dlist_${i}`}
+                    className="bg-white m-1 border shadow-md p-4"
+                  >
+                    <p className="text-xl p-2">Temperature</p>
+                    <div className="flex flex-col md:flex-row">
+                      <div className="text-left text-sm px-4 flex-1">
+                        <p>Total Boards: {e.boardCollection.length}</p>
+
+                      </div>
+                      <div className="flex justify-end p-4 flex-1 items-center">
+                        <ComButton
+                          text="Download"
+                          action={setFinishBoard.bind(this, e.id)}
+                        />
+                        <ComButton
+                          action={setConfirmPopUp.bind(this, e.id)}
+                          bgColor="bg-primCol1 hover:bg-primCol1-600"
+                          text="Delete"
+                        />
+                      </div>
+                    </div>
+                  </div> */}
+                </>
               ))
             ) : (
               <p>No Boards created yet.</p>
