@@ -254,7 +254,8 @@ function BoardCreate({ info, token, boardType, onCreateFinish }) {
 
     const title = `${colName} [${dNow.getFullYear()}/${dNow.getMonth() + 1
       }/${dNow.getDate()} ${dNow.getHours()}:${dNow.getMinutes()}:${dNow.getSeconds()}]`
-    const id = await boardCollectionDB.boardCollectionDB.add({
+  
+      const id = await boardCollectionDB.boardCollectionDB.add({
       title: title,
       boardCollection: collection
     })
@@ -335,13 +336,12 @@ function BoardCreate({ info, token, boardType, onCreateFinish }) {
         </div>
       )}
       {loaded ? (
-        <div className="flex flex-col md:flex-row mt-8 mb-8">
-          <div className="md:w-1/2 w-full">
-            <div className="w-4/5 mx-auto sticky top-6">
+        <div className="grid grid-cols-5 my-8">
+          <div className="w-full col-span-3">
+            <div className="w-full mx-auto sticky top-6">
               {boardData && sudBor ? (
                 <>
                   <div className="relative">
-
 
                     <boardData.viewerView
                       board={sudBor}
@@ -618,8 +618,9 @@ function BoardCreate({ info, token, boardType, onCreateFinish }) {
               ) : null}
             </div>
           </div>
-          <div className="md:w-1/2 w-full">
-            <div className="w-4/5 bg-white shadow-lg rounded-lg p-4 m-auto mt-4">
+          
+          <div className="col-span-2 w-full">
+            <div className="w-full bg-white shadow-lg rounded-lg p-4 m-auto mt-4">
 
               <div>
                 <div className="m-2 mt-4">
