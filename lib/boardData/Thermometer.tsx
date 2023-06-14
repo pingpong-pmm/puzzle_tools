@@ -1,4 +1,5 @@
 import { Thermo } from "../games/thermometer/main.js";
+import { Thermos } from "../games/thermometer-2/main.js";
 import { InputEnum } from "../../components/Inputs/InputEnum";
 
 export const data = {
@@ -40,17 +41,20 @@ export const data = {
 
   create: async (state) => {
 
-    let board_image = null
-    let solution_image = null
+    // let thermo = new Thermos()
+    // console.log(thermo.therm)
+    
+    // let board_image = null
+    // let solution_image = null
 
-    function setImage(i) {
-      board_image = i
-      solution_image = i
-      // console.log(board_image)
-    }
+    // function setImage(i) {
+    //   board_image = i
+    //   solution_image = i
+    //   // console.log(board_image)
+    // }
 
-    // let board_image = '/images/girl.jpg'
-    // let solution_image = '/images/girl2.jpg';
+    let board_image = '/images/girl.jpg'
+    let solution_image = '/images/girl2.jpg';
 
     let board = {
       width: state.width,
@@ -65,20 +69,10 @@ export const data = {
       path: [],
     };
 
-    return (<Thermo setImage={setImage} /> && { board, solution });
-    // return { board, solution }
+    return { board, solution }
   },
 
   viewerView: (data) => {
-
-    let board_image = null
-    let solution_image = null
-
-    function setImage(i) {
-      board_image = i
-      solution_image = i
-      console.log(i)
-    }
 
     let sB =
       data.showBoard === undefined || data.showBoard === true
@@ -87,11 +81,11 @@ export const data = {
 
     return sB ? (
       <div>
-        <Thermo show={!!false} setImage={setImage} />
+        <Thermo show={!!false} />
       </div>
     ) : (
       <div>
-        <Thermo show={!!true} setimage={setImage} />
+        <Thermo show={!!true} />
       </div>
     )
   },
