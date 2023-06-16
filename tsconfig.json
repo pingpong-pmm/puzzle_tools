@@ -27,7 +27,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "lib/games/thermometer/main.js"  ],
   "exclude": [
     "node_modules",
     "cypress"

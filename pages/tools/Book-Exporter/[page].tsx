@@ -1,17 +1,23 @@
+// import { PageMakeExport } from "../../../page_components/BookExporter";
 
-import { PageMakeExport } from "../../../page_components/BookExporter";
+// export const getServerSideProps =
+//   async function getServerSideProps({ req, resolvedUrl, query }) {
 
-export const getServerSideProps =
-  async function getServerSideProps({ req, resolvedUrl, query }) {
+//     return {
+//       props: {
+//         query: query,
+//       },
+//     };
+//   }
 
+import React from 'react'
 
-    return {
-      props: {
+type Props = {}
 
-        query: query,
-      },
-    };
-  }
+const PageMakeExport = (props: Props) => {
+  return (
+    <div>page</div>
+  )
+}
 
-
-export default PageMakeExport;
+export default PageMakeExport
