@@ -1,6 +1,7 @@
 import { Thermo, Thermoc } from "../games/thermometer/main.js";
-import { Thermos } from "../games/thermometer-2/main.js";
+// import { Thermos } from "../games/thermometer-2/main.js";
 import { InputEnum } from "../../components/Inputs/InputEnum";
+import Image from "next/image.js";
 
 export const data = {
   code: "004",
@@ -43,15 +44,10 @@ export const data = {
 
     let th = new Thermoc()
     // console.log(thermo.therm)
-    
+
     let board_image = th.viewImage()
     let solution_image = th.viewImage()
 
-    // function setImage(i) {
-    //   board_image = i
-    //   solution_image = i
-    //   // console.log(board_image)
-    // }
 
     // let board_image = '/images/girl.jpg'
     // let solution_image = '/images/girl2.jpg';
