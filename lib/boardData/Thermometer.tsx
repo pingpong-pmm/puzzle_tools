@@ -86,7 +86,12 @@ export const data = {
     )
   },
   downloaderView: (data) => {
-    return <div>Hello Ahnafiass</div>;
-    // return <MazeSvg board={data.board} />;
+    console.log(data)
+    return (
+      <div className="grid gap-6 p-6 min-h-screen items-center bg-white">
+        <Thermo show={!!false} />
+        <Thermo show={!!true} />
+      </div>
+    )
   },
 };
