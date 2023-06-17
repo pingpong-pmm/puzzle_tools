@@ -1,9 +1,9 @@
-import { Thermo } from "../games/thermometer/main.js";
+import { Thermo, Thermoc } from "../games/thermometer/main.js";
 import { Thermos } from "../games/thermometer-2/main.js";
 import { InputEnum } from "../../components/Inputs/InputEnum";
 
 export const data = {
-  code: "003",
+  code: "004",
   version: "0.0.1",
   state: {
     size: 5,
@@ -41,11 +41,11 @@ export const data = {
 
   create: async (state) => {
 
-    // let thermo = new Thermos()
+    let th = new Thermoc()
     // console.log(thermo.therm)
     
-    // let board_image = null
-    // let solution_image = null
+    let board_image = th.viewImage()
+    let solution_image = th.viewImage()
 
     // function setImage(i) {
     //   board_image = i
@@ -53,8 +53,8 @@ export const data = {
     //   // console.log(board_image)
     // }
 
-    let board_image = '/images/girl.jpg'
-    let solution_image = '/images/girl2.jpg';
+    // let board_image = '/images/girl.jpg'
+    // let solution_image = '/images/girl2.jpg';
 
     let board = {
       width: state.width,
