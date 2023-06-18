@@ -207,7 +207,7 @@ function BoardDownload({ info, token, board }) {
               </div>
 
               <div className="bg-white p-4 mt-4 rounded-xl shadow-lg">
-                <p className="text-xl text-gray-500">Board Samples (First 1)</p>
+                <p className="text-xl text-gray-500">Board Samples (First 01)</p>
                 <div className="grid">
                   {boardCol.simple.boardCollection.slice(0, 1).map((e, i) => {
                     console.log(e)
