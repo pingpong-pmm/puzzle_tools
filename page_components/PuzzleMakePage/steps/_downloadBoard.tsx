@@ -6,7 +6,7 @@ import { boardDataCode } from "../../../lib/boardData";
 import CreatorDOM from "../../../components/Creator";
 import { bookTypes } from "../../LayoutPage/Components/Variables";
 import router from "next/router";
-import {boardCollectionDB, db} from "../../../db/idb";
+import { boardCollectionDB, db } from "../../../db/idb";
 
 let totalProg = 0;
 let queueBoard = [];
@@ -67,7 +67,7 @@ function BoardDownload({ info, token, board }) {
   async function loadBoard() {
     try {
       // let boardCol = await Account.board.getCollection(token, board);
-      console.log({board})
+      console.log({ board })
       let boardCol: any = await boardCollectionDB.boardCollectionDB.get(board)
       boardCol = {
         simple: boardCol
@@ -208,7 +208,7 @@ function BoardDownload({ info, token, board }) {
 
               <div className="bg-white p-4 mt-4 rounded-xl shadow-lg">
                 <p className="text-xl text-gray-500">Board Samples (First 1)</p>
-                <div className="flex flex-wrap">
+                <div className="grid">
                   {boardCol.simple.boardCollection.slice(0, 1).map((e, i) => {
                     console.log(e)
                     return (
@@ -217,7 +217,7 @@ function BoardDownload({ info, token, board }) {
                         className="lg:-ml-5 w-full text-center m-3"
                       >
                         <p className="mb-2">{e.id}</p>
-                        <div className="w-full lg:w-3/5 mx-auto">
+                        <div className="w-full">
                           <boardData.viewerView board={e.data} />
                         </div>
                       </div>
@@ -226,18 +226,18 @@ function BoardDownload({ info, token, board }) {
                 </div>
               </div>
 
-              <div className="bg-white p-4 mt-4 rounded-xl shadow-lg">
+              <div className="bg-white mt-4 rounded-xl shadow-lg">
                 <p className="text-xl text-gray-500">
                   Board Samples (First 12)
                 </p>
-                <div className="flex flex-wrap gap-3 mx-auto justify-center p-0 md:p-4">
+                <div className="grid w-full gap-3">
                   {boardCol.simple.boardCollection.slice(0, 12).map((e, i) => {
                     return (
                       <div
                         key={`col_${i}`}
-                        className="md:-ml-5 w-2/5 md:w-1/3 text-center"
+                        className="md:-ml-5 w-full text-center"
                       >
-                        <div className="w-full md:w-3/5 mx-0 md:mx-auto">
+                        <div className="w-full">
                           <boardData.viewerView board={e.data} />
                         </div>
                       </div>
@@ -316,9 +316,8 @@ function BoardDownload({ info, token, board }) {
                             <div
                               className="bg-secCol1 h-full"
                               style={{
-                                width: `${
-                                  Math.min(processed / boardToProcLen, 1) * 100
-                                }%`,
+                                width: `${Math.min(processed / boardToProcLen, 1) * 100
+                                  }%`,
                               }}
                             />
                           </div>
@@ -337,9 +336,8 @@ function BoardDownload({ info, token, board }) {
                             <div
                               className="bg-primCol1 h-full"
                               style={{
-                                width: `${
-                                  Math.min(packaged / boardToProcLen, 1) * 100
-                                }%`,
+                                width: `${Math.min(packaged / boardToProcLen, 1) * 100
+                                  }%`,
                               }}
                             />
                           </div>
@@ -377,9 +375,8 @@ function BoardDownload({ info, token, board }) {
             DownloadView={boardData.downloaderView}
             namePrefix={boardCol.simple.title}
             startNumberAt={currentIndex}
-            resultZipName={`${boardCol.simple.title}_[${
-              totalProg - queueBoard.length
-            }]`}
+            resultZipName={`${boardCol.simple.title}_[${totalProg - queueBoard.length
+              }]`}
             cnt={boardToProcLen}
             collectionBoard={boardToProc}
             collectionSolution={solToProc}
