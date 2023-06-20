@@ -45,6 +45,7 @@ export const data = {
     let th = new Thermoc()
     // console.log(thermo.therm)
 
+
     let board_image = th.viewImage()
     let solution_image = th.viewImage()
 
@@ -70,6 +71,13 @@ export const data = {
 
   viewerView: (data) => {
 
+    let temps = Array.from({ length: 8 }, () => Math.floor(Math.random() * 100))
+    const tempss = temps?.map((jin, index) => ({
+      id: index + 1,
+      temp: jin
+    }));
+    // setData(tempss)
+
     let sB =
       data.showBoard === undefined || data.showBoard === true
         ? true
@@ -77,11 +85,11 @@ export const data = {
 
     return sB ? (
       <div>
-        <Thermo show={!!false} />
+        <Thermo show={!!false} temps={tempss} />
       </div>
     ) : (
       <div>
-        <Thermo show={!!true} />
+        <Thermo show={!!true} temps={tempss} />
       </div>
     )
   },
