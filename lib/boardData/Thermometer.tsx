@@ -1,15 +1,13 @@
 import { Thermo, Thermoc } from "../games/thermometer/main.js";
-// import { Thermos } from "../games/thermometer-2/main.js";
 import { InputEnum } from "../../components/Inputs/InputEnum";
-import Image from "next/image.js";
 
 export const data = {
   code: "004",
   version: "0.0.1",
   state: {
-    size: 5,
-    shape: 'a',
-    cellShape: "square",
+    c: 100,
+    f: 212,
+    // cellShape: "square",
   },
 
   form: [
@@ -42,26 +40,24 @@ export const data = {
 
   create: async (state) => {
 
-    let th = new Thermoc()
-    // console.log(thermo.therm)
-
-    let board_image = th.viewImage()
-    let solution_image = th.viewImage()
-
+    let th = new Thermoc(state.c)
+    let b_data = th.makeData()
 
     // let board_image = '/images/girl.jpg'
     // let solution_image = '/images/girl2.jpg';
 
     let board = {
+      boardData: b_data,
       width: state.width,
       height: state.height,
-      mazeData: board_image,
+      // mazeData: board_image,
       path: [],
     };
     let solution = {
+      boardData: b_data,
       width: state.width,
       height: state.height,
-      mazeData: solution_image,
+      // mazeData: solution_image,
       path: [],
     };
 
@@ -69,6 +65,7 @@ export const data = {
   },
 
   viewerView: (data) => {
+    let thermometer = data.board.board.boardData
 
     let sB =
       data.showBoard === undefined || data.showBoard === true
@@ -77,20 +74,21 @@ export const data = {
 
     return sB ? (
       <div>
-        <Thermo show={!!false} />
+        <Thermo show={!!false} temps={thermometer} />
       </div>
     ) : (
       <div>
-        <Thermo show={!!true} />
+        <Thermo show={!!true} temps={thermometer} />
       </div>
     )
   },
   downloaderView: (data) => {
-    console.log(data)
+    console.log("bd: " + data)
+    let thermometer = data.board.boardData
     return (
       <div className="grid gap-6 p-6 min-h-screen items-center bg-white">
-        <Thermo show={!!false} />
-        <Thermo show={!!true} />
+        <Thermo show={!!false} temps={thermometer} />
+        <Thermo show={!!true} temps={thermometer} />
       </div>
     )
   },
