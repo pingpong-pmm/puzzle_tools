@@ -67,7 +67,7 @@ function BoardDownload({ info, token, board }) {
   async function loadBoard() {
     try {
       // let boardCol = await Account.board.getCollection(token, board);
-      console.log({ board })
+      // console.log({ board })
       let boardCol: any = await boardCollectionDB.boardCollectionDB.get(board)
       boardCol = {
         simple: boardCol
