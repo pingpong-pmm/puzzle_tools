@@ -1,4 +1,8 @@
+/* eslint-disable react/jsx-no-duplicate-props */
+import { toPng } from 'html-to-image';
 import type { NextPage } from 'next'
+import Image from 'next/image';
+import { SetStateAction, useEffect, useState } from 'react';
 // import { toPng } from 'html-to-image'
 // import Image from 'next/image'
 // import { useCallback, useEffect, useRef, useState } from 'react'
@@ -295,6 +299,51 @@ import type { NextPage } from 'next'
 //     }
 // }
 
+function Sara(props: { setImg: (arg0: string) => void; view: any; }) {
+
+    useEffect(() => {
+        function viewImage() {
+            if (typeof document !== 'undefined') {
+                let node = document.getElementById('view');
+                toPng(node)
+                    .then(function (dataUrl) {
+                        var img = document.createElement('img');
+                        img.src = dataUrl;
+                        localStorage.clear()
+                        localStorage.setItem("th_img", img.src)
+                        // props.setImg(img.src)
+                    })
+                    .catch(function (error) {
+                        console.error('oops, something went wrong!', error);
+                    });
+            }
+        }
+        viewImage()
+    }, [props])
+
+    return (
+        <div className='grid items-center h-screen w-full bg-red-600'>
+            <div id="view" className='w-full grid items-center justify-center text-white'>
+                <p className='p-2'>Hello</p>
+                <p className='p-2'>Hello</p>
+                <p className='p-2'>Hello</p>
+                <p className='p-2'>Hello</p>
+                <p className='p-2'>Hello</p>
+                <p className='p-2'>Hello</p>
+            </div>
+        </div>
+    )
+}
+
+
+class Ahnaf {
+    constructor() {
+
+    }
+
+
+}
+
 const Demos: NextPage = () => {
 
     // const [show, setShow] = useState(false)
@@ -311,17 +360,32 @@ const Demos: NextPage = () => {
     // const myData = new Ahnaf(data, show);
     // const png = myData.tumi(true)
     // const preview = myData.ami(true)
-    // console.log("preview: " + preview)
 
+    let pic = new Ahnaf()
+
+    const [img, setImg] = useState("")
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            let imgs = localStorage.getItem("th_img")
+            setImg(imgs)
+        }
+    }, [])
+    function handleImage(i: SetStateAction<string>) {
+        // setImg(i)
+        // console.log(i)
+    }
+    const sara = (
+        <Sara view={!!true} setImg={(i: any) => handleImage(i)} />
+    )
     return (
-        <div className='grid h-screen w-full bg-red-600'>
-            {/* <button
-                type='button'
-                onClick={() => setShow(!show)}
-                className='p-2 h-10 w-36 bg-red-600'>{!show ? "Show" : "Hide"}
-            </button> */}
-            {/* {png} */}
-        </div>
+        <>
+            <div className=''>
+                <Sara view={!!true} setImg={(i: any) => handleImage(i)} />
+            </div>
+            <div className='w-full'>
+                <Image width={500} height={500} src={img || ''} alt="ahnaf" />
+            </div>
+        </>
     )
 }
 

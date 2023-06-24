@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 import { Thermo, Thermoc } from "../games/thermometer/main.js";
 import { InputEnum } from "../../components/Inputs/InputEnum";
 
@@ -83,11 +84,9 @@ export const data = {
     )
   },
   downloaderView: (data) => {
-    console.log("bd: " + data)
     let thermometer = data.board.boardData
     return (
-      <div className="grid gap-6 p-6 min-h-screen items-center bg-white">
-        <Thermo show={!!false} temps={thermometer} />
+      <div className="grid h-full w-full items-center">
         <Thermo show={!!true} temps={thermometer} />
       </div>
     )

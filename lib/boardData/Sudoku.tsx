@@ -123,9 +123,9 @@ export const data = {
     let board: any = sudoku.generateCode();
     let solution: any = sudoku.solve().generateCode();
     //let solution = SudokuLogic.solver.solve(board);
+    
     board = {
       board: board.key,
-
       fontFamily: state.fontFamily,
       fontUrl: state.fontUrl,
       boardFormat: state.boardFormat,
@@ -135,7 +135,6 @@ export const data = {
 
     solution = {
       board: solution.key,
-
       fontFamily: state.fontFamily,
       fontUrl: state.fontUrl,
       boardFormat: state.boardFormat,
