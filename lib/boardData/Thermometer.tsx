@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 import { Thermo, Thermoc } from "../games/thermometer/main.js";
+import { ThermoSVG } from '../games/thermometer/ThermoSVG.js'
 import { InputEnum } from "../../components/Inputs/InputEnum";
 
 export const data = {
@@ -44,6 +45,9 @@ export const data = {
     let th = new Thermoc(state.c)
     let b_data = th.makeData()
 
+    let link = localStorage.getItem("th_img")
+    let board_image = link
+    let solution_image = link;
     // let board_image = '/images/girl.jpg'
     // let solution_image = '/images/girl2.jpg';
 
@@ -51,14 +55,14 @@ export const data = {
       boardData: b_data,
       width: state.width,
       height: state.height,
-      // mazeData: board_image,
+      mazeData: board_image,
       path: [],
     };
     let solution = {
       boardData: b_data,
       width: state.width,
       height: state.height,
-      // mazeData: solution_image,
+      mazeData: solution_image,
       path: [],
     };
 
@@ -85,8 +89,10 @@ export const data = {
   },
   downloaderView: (data) => {
     let thermometer = data.board.boardData
+    let link = localStorage.getItem("th_img")
     return (
       <div className="grid h-full w-full items-center">
+        {/* <ThermoSVG link={link} /> */}
         <Thermo show={!!true} temps={thermometer} />
       </div>
     )
