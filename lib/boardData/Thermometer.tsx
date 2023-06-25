@@ -70,7 +70,8 @@ export const data = {
   },
 
   viewerView: (data) => {
-    let thermometer = data.board.board.boardData
+    let thermometer = data.board.board.boardData;
+    let link = localStorage.getItem("th_img")
 
     let sB =
       data.showBoard === undefined || data.showBoard === true
@@ -78,23 +79,23 @@ export const data = {
         : data.showBoard;
 
     return sB ? (
-      <div>
-        <Thermo show={!!false} temps={thermometer} />
-      </div>
+      <Thermo show={!!false} temps={thermometer} />
     ) : (
-      <div>
-        <Thermo show={!!true} temps={thermometer} />
-      </div>
+      <Thermo show={!!true} temps={thermometer} />
     )
   },
   downloaderView: (data) => {
     let thermometer = data.board.boardData
-    let link = localStorage.getItem("th_img")
-    return (
-      <div className="grid h-full w-full items-center">
-        {/* <ThermoSVG link={link} /> */}
-        <Thermo show={!!true} temps={thermometer} />
-      </div>
+    // let link = localStorage.getItem("th_img")
+    let sB =
+      data.showBoard === undefined || data.showBoard === true
+        ? true
+        : data.showBoard;
+
+    return sB ? (
+      <Thermo show={!!false} temps={thermometer} />
+    ) : (
+      <Thermo show={!!true} temps={thermometer} />
     )
   },
 };
