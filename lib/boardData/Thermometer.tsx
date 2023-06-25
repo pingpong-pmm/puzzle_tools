@@ -93,9 +93,9 @@ export const data = {
         : data.showBoard;
 
     return sB ? (
-      <Thermo show={!!false} temps={thermometer} />
-    ) : (
       <Thermo show={!!true} temps={thermometer} />
+    ) : (
+      <Thermo show={!!false} temps={thermometer} />
     )
   },
 };
