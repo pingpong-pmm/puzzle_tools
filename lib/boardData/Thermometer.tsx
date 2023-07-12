@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 import { Thermo, Thermoc } from "../games/thermometer/main.js";
-import { ThermoSVG } from '../games/thermometer/ThermoSVG.js'
+// import { ThermoSVG } from '../games/thermometer/ThermoSVG.js'
 import { InputEnum } from "../../components/Inputs/InputEnum";
 
 export const data = {
@@ -73,13 +73,16 @@ export const data = {
     let thermometer = data.board.board.boardData;
     let link = localStorage.getItem("th_img")
 
+
     let sB =
       data.showBoard === undefined || data.showBoard === true
         ? true
         : data.showBoard;
 
-    return sB ? (
+    return sB ? (<>
+      {/* <img src={link} height={200} width={200} alt='hello' /> */}
       <Thermo show={!!false} temps={thermometer} />
+    </>
     ) : (
       <Thermo show={!!true} temps={thermometer} />
     )
