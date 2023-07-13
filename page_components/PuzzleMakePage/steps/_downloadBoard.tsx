@@ -183,8 +183,10 @@ function BoardDownload({ info, token, board }) {
     <div className="w-full">
       <div className="relative z-30 bg-white min-h-screen w-full">
         {loaded ? (
-          <div className="flex flex-col-reverse lg:flex-row mx-8 break-all">
-            <div className="w-full lg:w-2/3">
+          <div className="grid md:grid-cols-3 grid-cols-1 w-full gap-4">
+
+
+            <div className="col-span-2 grid gap-4">
               <div className="bg-white p-4 mt-4 rounded-xl shadow-lg">
                 {/* <ComField
                   title="Title"
@@ -206,15 +208,15 @@ function BoardDownload({ info, token, board }) {
                 </h1>
               </div>
 
-              <div className="bg-white p-4 mt-4 rounded-xl shadow-lg">
-                <p className="text-xl text-gray-500">Board Samples (First 01)</p>
+              <div className="bg-white p-4 rounded-xl shadow-lg">
+                <p className="text-xl py-2 text-gray-500">Board Samples (First 01)</p>
                 <div className="grid">
                   {boardCol.simple.boardCollection.slice(0, 1).map((e, i) => {
                     console.log(e)
                     return (
                       <div
                         key={`col_${i}`}
-                        className="lg:-ml-5 w-full text-center m-3"
+                        className="mx-auto w-full text-center m-3"
                       >
                         <p className="mb-2">{e.id}</p>
                         <div className="w-full">
@@ -226,16 +228,16 @@ function BoardDownload({ info, token, board }) {
                 </div>
               </div>
 
-              <div className="bg-white mt-4 rounded-xl shadow-lg">
-                <p className="text-xl text-gray-500">
+              <div className="bg-white p-4 rounded-xl shadow-lg">
+                <p className="text-xl text-gray-500 py-2">
                   Board Samples (First 12)
                 </p>
-                <div className="grid w-full gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-3">
                   {boardCol.simple.boardCollection.slice(0, 12).map((e, i) => {
                     return (
                       <div
                         key={`col_${i}`}
-                        className="md:-ml-5 w-full text-center"
+                        className="w-full text-center"
                       >
                         <div className="w-full">
                           <boardData.viewerView board={e.data} />
@@ -246,7 +248,8 @@ function BoardDownload({ info, token, board }) {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-1/3 relative md:ml-2">
+
+            <div className="relative col-span-1">
               <div className="block md:fixed  lg:flex flex-col p-5 shadow-xl rounded-lg bg-white break-normal w-full lg:w-1/4">
                 <p className="text-2xl text-center mb-5">Download Options</p>
                 {!boardToProc ? (

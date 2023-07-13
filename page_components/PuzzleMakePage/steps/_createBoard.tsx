@@ -336,8 +336,8 @@ function BoardCreate({ info, token, boardType, onCreateFinish }) {
         </div>
       )}
       {loaded ? (
-        <div className="grid grid-cols-5 my-8">
-          <div className="w-full col-span-3">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 py-8">
+          <div className="w-full md:col-span-3">
             <div className="w-full mx-auto sticky top-6">
               {boardData && sudBor ? (
                 <>
@@ -367,13 +367,13 @@ function BoardCreate({ info, token, boardType, onCreateFinish }) {
               {boardData && sudBor.solution && (
                 <button
                   onClick={setShowBoard.bind(this, !showBoard)}
-                  className="overflow-hidden border border-gray-500 hover:shadow-xl mt-4 p-1 rounded-lg"
+                  className="overflow-hidden border text-md font-bold h-8 border-gray-500 hover:shadow-xl mt-4 rounded-md"
                 >
                   <span
                     className={`${showBoard
                       ? "bg-primCol1-500 text-white"
                       : "bg-transparent"
-                      } p-1 rounded-lg`}
+                      } p-3`}
                   >
                     Board
                   </span>
@@ -381,7 +381,7 @@ function BoardCreate({ info, token, boardType, onCreateFinish }) {
                     className={`${!showBoard
                       ? "bg-primCol1-500 text-white"
                       : "bg-transparent"
-                      } p-1 rounded-lg`}
+                      } p-3`}
                   >
                     Solution
                   </span>
@@ -619,8 +619,8 @@ function BoardCreate({ info, token, boardType, onCreateFinish }) {
             </div>
           </div>
           
-          <div className="col-span-2 w-full">
-            <div className="w-full bg-white shadow-lg rounded-lg p-4 m-auto mt-4">
+          <div className="md:col-span-2 w-full">
+            <div className="w-full bg-gray-100 shadow-lg rounded-lg p-4 m-auto">
 
               <div>
                 <div className="m-2 mt-4">
