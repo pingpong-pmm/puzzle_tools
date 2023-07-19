@@ -1,15 +1,65 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import type { NextPage } from 'next'
+import { useEffect, useState } from 'react';
 
+export class Chadaa {
+
+    constructor() {
+        // this.c = c;
+    }
+
+    makeData() {
+        //create random data 
+        function getRandomNumber(min: number, max: number) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function getRandomObject() {
+            let high = 0
+            let low = 0
+
+            // Generate random numbers for 'high' and 'low' while ensuring 'low' is less than 'high'
+            do {
+                high = getRandomNumber(-90, 90);
+                low = getRandomNumber(-90, 90);
+            } while (high === 0 || low === 0 || low >= high);
+
+            return { high, low };
+        }
+
+        function createRandomArray() {
+            const randomArray = [];
+
+            for (let i = 0; i < 4; i++) {
+                randomArray.push(getRandomObject());
+            }
+
+            return randomArray;
+        }
+
+        const randomArray = createRandomArray();
+        return randomArray
+    }
+
+}
 
 const Demos: NextPage = () => {
 
-    return (
+    const [view, setView] = useState(false)
+
+    let th = new Chadaa()
+    let b_data = th.makeData()
+    // console.log(b_data)
+
+    useEffect(() => {
+        setView(true)
+    }, [])
+
+    return view && (
         <div className='p-8 flex gap-4 justify-center items-center mx-auto'>
-            <Chada low={10} high={65} />
-            <Chada low={-40} high={80} />
-            <Chada low={20} high={45} />
-            <Chada low={-10} high={75} />
+            {b_data?.map((z: { low: number; high: number; }, index: number) => (
+                <Chada key={index} low={z.low} high={z.high} sb={true} x={index + 1} />
+            ))}
         </div>
     )
 }
@@ -45,7 +95,7 @@ function Chada(props: any) {
                     <div style={{ transform: `rotate(${props.high}deg)`, transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-[red] z-20' />
                 </div>
             </div>
-            <p className='text-xs text-center py-2'>(1) <span className='border-b border-black'>{props.high - props.low}°</span></p>
+            <p className='text-xs text-center py-2'>({props.x}) {props.sb ? (<span className='border-b border-black'>{props.high - props.low}°</span>) : (<span>_____</span>)}</p>
         </div>
     )
 }
