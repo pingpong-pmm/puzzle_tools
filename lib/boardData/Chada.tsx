@@ -40,10 +40,10 @@ export const data = {
 
     create: async (state: any) => {
 
-        let th = new Chadaa()
-        let b_data = th.makeData()
+        let ch = new Chadaa()
+        let b_data = ch.makeData()
 
-        let link = localStorage.getItem("th_img")
+        let link = localStorage.getItem("ch_img")
         let board_image = link
         let solution_image = link;
 
@@ -79,10 +79,10 @@ export const data = {
                 : data.showBoard;
 
         return sB ? (<>
-            <Chada show={!!false} temps={chada_data} />
+            <Chada show={!!false} angles={chada_data} />
         </>
         ) : (
-            <Chada show={!!true} temps={chada_data} />
+            <Chada show={!!true} angles={chada_data} />
         )
     },
     downloaderView: (data: any) => {
@@ -93,9 +93,9 @@ export const data = {
                 : data.showBoard;
 
         return sB ? (
-            <Chada show={!!true} temps={chada_data} />
+            <Chada show={!!true} angles={chada_data} />
         ) : (
-            <Chada show={!!false} temps={chada_data} />
+            <Chada show={!!false} angles={chada_data} />
         )
     },
 };
