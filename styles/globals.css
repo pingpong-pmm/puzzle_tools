@@ -6,30 +6,6 @@
     background: rgba(0, 0, 0, 0.5);
 }
 
-/*
-::-webkit-input-placeholder {
-    text-align: center;
-}
-
-:-moz-placeholder {
-    text-align: center;
-}
-
-::-moz-placeholder {
-    text-align: center;
-}
-
-:-ms-input-placeholder {
-    text-align: center;
-}
-*/
-
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
 :root {
     --scroll-bar-color: #DA4EED;
     --scroll-bar-bg-color: transparent;
@@ -40,6 +16,10 @@
     scrollbar-color: var(--scroll-bar-color) var(--scroll-bar-bg-color);
 }
 
+#line1 {
+    transform: rotate(10deg);
+    transform-origin: bottom;
+}
 
 /* Works on Chrome, Edge, and Safari */
 
