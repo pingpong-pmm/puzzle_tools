@@ -42,6 +42,13 @@ const boards = [
     link: "thermometer",
     categories: [categories.Numbergames, categories.Visualgames],
   },
+  {
+    title: "Protractor",
+    subtitle: "Find the value from given angles",
+    image: "protractor - Copy.PNG",
+    link: "chada",
+    categories: [categories.Numbergames, categories.Visualgames],
+  },
 
 ];
 
@@ -52,7 +59,7 @@ function PickBoard({ setBoardType, purchaseList }) {
   return (
     <div className="grid grid-cols-4">
 
-      <div className="col-span-3 grid grid-cols-3 gap-2 justify-start items-start p-4 min-h-screen">
+      <div className="col-span-3 grid grid-cols-3 gap-2 p-4">
         {boards &&
           boards.map((e, i) => {
             return (
