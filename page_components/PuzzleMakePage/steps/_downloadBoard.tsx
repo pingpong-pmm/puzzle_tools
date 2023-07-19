@@ -14,6 +14,10 @@ let queueSolution = [];
 let currentIndex = 0;
 let nextIndex = 0;
 
+export function classNames(...classes: any) {
+  return classes.filter(Boolean).join(' ')
+}
+
 function BoardDownload({ info, token, board }) {
   const [boardCol, setBoardCol] = useState<any>(false);
 
@@ -232,12 +236,18 @@ function BoardDownload({ info, token, board }) {
                 <p className="text-xl text-gray-500 py-2">
                   Board Samples (First 12)
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-3">
+                <div
+                   className={classNames(
+                    !!boardCol.simple.title.toLowerCase().includes("chada") ? 'md:grid-cols-1' : 'md:grid-cols-2',
+                    'grid grid-cols-1 w-full gap-3'
+                  )}
+                >
                   {boardCol.simple.boardCollection.slice(0, 12).map((e, i) => {
                     return (
                       <div
                         key={`col_${i}`}
                         className="w-full text-center"
+                     
                       >
                         <div className="w-full">
                           <boardData.viewerView board={e.data} />

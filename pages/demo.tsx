@@ -57,7 +57,7 @@ const Demos: NextPage = () => {
 
     return view && (
         <div className='p-8 max-w-lg w-full flex flex-wrap gap-2 justify-center items-center mx-auto'>
-            {b_data?.map((z: { low: number; high: number; }, index: number) => (
+            {b_data?.slice(0, 1).map((z: { low: number; high: number; }, index: number) => (
                 <div key={index} className='bg-gray-200 rounded-md p-2'>
                     <Chada low={z.low} high={z.high} sb={true} x={index + 1} />
                 </div>
@@ -68,9 +68,9 @@ const Demos: NextPage = () => {
 
 function Chada(props: any) {
     return (
-        <div className='w-40'>
-            <div className="relative flex justify-center rounded-t-full ring-1 ring-black h-20 w-40 bg-gray-100">
-                <div className='flex gap-[0.5px] h-20 relative justify-center'>
+        <div className='w-64'>
+            <div className="relative flex justify-center rounded-t-full ring-1 ring-black h-32 w-64 bg-gray-100">
+                <div className='flex gap-[0.5px] h-30 relative justify-center'>
 
                     <div style={{ transform: 'rotate(-85deg)', transformOrigin: 'bottom' }} className='h-[95px] absolute bottom-0 p-[0.5px] bg-black z-20' />
                     <div style={{ transform: 'rotate(-80deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
@@ -110,7 +110,7 @@ function Chada(props: any) {
                     <div style={{ transform: 'rotate(85deg)', transformOrigin: 'bottom' }} className='h-[95px] absolute bottom-0 p-[0.5px] bg-black z-20' />
                     {/* <div style={{ transform: 'rotate(90deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' /> */}
                 </div>
-                <div className='flex justify-center absolute bottom-0 rounded-t-full h-[90px] w-[180px] bg-white z-40'>
+                <div className='flex justify-center absolute bottom-0 rounded-t-full h-[130px] w-[260px] bg-white z-40'>
                     <div style={{ transform: `rotate(${props.low}deg)`, transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-[red] z-20' />
                     <div style={{ transform: `rotate(${props.high}deg)`, transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-[red] z-20' />
                 </div>
