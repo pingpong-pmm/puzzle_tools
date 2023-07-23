@@ -218,13 +218,160 @@ function Thermometer({ board }) {
         </g>
       </svg>
 
+      <div className="relative hidden">
+        <div className="flex items-start justify-center">
+          <div className='grid gap-0.5 pt-3 w-4 justify-items-end'>
+            {/* 10 */}
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            {/* 20 */}
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            {/* 30 */}
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            {/* 40 */}
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            {/* 50 */}
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            {/* 60 */}
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            {/* 70 */}
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            {/* 80 */}
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            {/* 90 */}
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            {/* 100 */}
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+
+            <div className='p-[0.5px] w-4 bg-black' />
+
+          </div>
+
+          <div className="h-48 w-4 grid items-center rotate-180 overflow-hidden rounded-full ring-black ring-1 bg-gray-300">
+            <div className='h-full pb-3 pt-10'>
+              <div className="h-full bg-black"
+              // style={{ "height": `${+item.temp}%` }}
+              >
+              </div>
+            </div>
+          </div>
+
+          <div className='grid gap-0.5 pt-3'>
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+
+            <div className='p-[0.5px] w-4 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-2 bg-black' />
+            <div className='p-[0.5px] w-4 bg-black' />
+
+          </div>
+        </div>
+
+        {/* The bottom circle */}
+        <div className="absolute inset-0 flex items-end justify-center">
+          <div className="h-[50px] ring-2 ring-black w-[50px] rounded-full bg-black"></div>
+        </div>
+      </div>
 
     </div>
   );
 }
 
 export function ThermoSVG(props: any) {
-  
+
   // let temp = 10
   let temp = props.temp
 
@@ -235,7 +382,7 @@ export function ThermoSVG(props: any) {
           <path style={{ fill: "none", stroke: "#231f20", strokeMiterlimit: "10", strokeWidth: "3px" }} d="M381,276.28a21,21,0,1,0-42,0v537h42Z"
             transform="translate(-310.42 -253.64)" />
 
-          <rect style={{ fill: "#ed1c24" }} x="32.2" y={22.17 + (535.99 - 535.99 * temp / 100)} width="34.74" height={535.99 * temp / 100} />
+          <rect style={{ fill: "#231f20" }} x="32.2" y={22.17 + (535.99 - 535.99 * temp / 100)} width="34.74" height={535.99 * temp / 100} />
           {/* <rect style={{ fill: "#ed1c24" }} x="32.2" y="22.17" width="34.74" height="535.99" /> */}
 
           <line style={{ fill: "none", stroke: "#231f20", strokeWidth: "0.5px", strokeMiterlimit: "10" }} y1="22.17" x2="28.59" y2="22.17" />
