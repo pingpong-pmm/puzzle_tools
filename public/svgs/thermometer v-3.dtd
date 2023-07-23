@@ -1,0 +1,18 @@
+<!ELEMENT svg (defs,polyline,path+,circle)>
+<!ATTLIST svg id NMTOKEN #REQUIRED>
+<!ATTLIST svg data-name CDATA #REQUIRED>
+<!ATTLIST svg viewBox CDATA #REQUIRED>
+<!ELEMENT defs (style)>
+<!ELEMENT style (#PCDATA)>
+<!ELEMENT polyline EMPTY>
+<!ATTLIST polyline class NMTOKEN #REQUIRED>
+<!ATTLIST polyline points CDATA #REQUIRED>
+<!ELEMENT path EMPTY>
+<!ATTLIST path class NMTOKEN #REQUIRED>
+<!ATTLIST path d CDATA #REQUIRED>
+<!ATTLIST path transform CDATA #REQUIRED>
+<!ELEMENT circle EMPTY>
+<!ATTLIST circle class NMTOKEN #REQUIRED>
+<!ATTLIST circle cx NMTOKEN #REQUIRED>
+<!ATTLIST circle cy NMTOKEN #REQUIRED>
+<!ATTLIST circle r NMTOKEN #REQUIRED>

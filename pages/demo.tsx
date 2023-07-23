@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import type { NextPage } from 'next'
 import { useEffect, useState } from 'react';
+import '../styles/Home.module.css'
 
 export class Chadaa {
 
@@ -47,6 +48,25 @@ const Demos: NextPage = () => {
 
     const [view, setView] = useState(false)
 
+    // Initial height for className='two'
+    const initialHeightTwo = 537;
+
+    // State to handle the height of className='one'
+    const [heightOne, setHeightOne] = useState(0);
+
+    // Function to handle height changes for 'className="one"'
+    const handleHeightChange = (newHeight: number) => {
+        // Ensure the height is within the range of 0 to 100
+        const clampedHeight = Math.max(0, Math.min(100, newHeight));
+        setHeightOne(clampedHeight);
+    };
+
+    // Replace the 'originalHeightOne' with the actual original height of className="one"
+    const originalHeightOne = 557.52;
+
+    // Calculate the new height based on the percentage of the original height for 'className="one"'
+    const newHeightOne = (originalHeightOne * heightOne) / 100;
+
     let th = new Chadaa()
     let b_data = th.makeData()
     // console.log(b_data)
@@ -56,13 +76,39 @@ const Demos: NextPage = () => {
     }, [])
 
     return view && (
-        <div className='p-8 max-w-lg w-full flex flex-wrap gap-2 justify-center items-center mx-auto'>
-            {b_data?.slice(0, 1).map((z: { low: number; high: number; }, index: number) => (
-                <div key={index} className='bg-gray-200 rounded-md p-2'>
-                    <Chada low={z.low} high={z.high} sb={true} x={index + 1} />
+        <>
+            <div className='p-8 md:hidden max-w-lg w-full flex flex-wrap gap-2 justify-center items-center mx-auto'>
+                {b_data?.slice(0, 1).map((z: { low: number; high: number; }, index: number) => (
+                    <div key={index} className='bg-gray-200 rounded-md p-2'>
+                        <Chada low={z.low} high={z.high} sb={true} x={index + 1} />
+                    </div>
+                ))}
+            </div>
+
+            <div className='p-8 h-screen flex gap-4'>
+                {/* 
+                <svg className='h-[70vh] w-full' id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.47 647.6">
+
+                    <path className='two' style={{ fill: 'none', strokeWidth: '3px', stroke: '#231f20', strokeMiterlimit: '10' }} d="M381,271.48a21,21,0,1,0-42,0v537h42Z"
+                        transform="translate(-313.26 -248.84)" />
+                    <path className='one' style={{ strokeMiterlimit: '10', fill: '#ed1c24', stroke: '#ed1c24', height: '10px' }} d="M378.68,301a18.68,18.68,0,1,0-37.36,0V808.52h37.36Z"
+                        transform="translate(-313.26 -248.84)" />
+
+                    <circle style={{ stroke: '#231f20', strokeMiterlimit: '10', fill: '#231f20' }} cx="46.74" cy="600.86" r="46.24" />
+                </svg> */}
+
+                <div>
+                    <svg className='h-[70vh] w-full items-end grid' id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.47 647.6">
+                        <path className='two' style={{ fill: 'blue', strokeWidth: '3px', stroke: '#231f20', strokeMiterlimit: '10' }} d="M381,271.48a21,21,0,1,0-42,0v537h42Z"
+                            transform="translate(-313.26 -248.84)" />
+                        <path className='one' style={{ transformOrigin:'top', strokeMiterlimit: '10', fill: '#ed1c24', stroke: '#ed1c24'}} d={`M378.68,301a18.68,18.68,0,1,0-37.36,0V${540}h37.36Z`}
+                            transform="translate(-313.26 -248.84)" />
+
+                        <circle style={{ stroke: '#231f20', strokeMiterlimit: '10', fill: '#231f20' }} cx="46.74" cy="600.86" r="46.24" />
+                    </svg>
                 </div>
-            ))}
-        </div>
+            </div>
+        </>
     )
 }
 
