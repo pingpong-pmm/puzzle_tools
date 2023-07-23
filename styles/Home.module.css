@@ -116,14 +116,42 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }
+}
+
+.cls-1 {
+  fill: #ed1c24;
+  stroke: #ed1c24;
+}
+
+.cls-1,
+.cls-2,
+.cls-3 {
+  stroke-miterlimit: 10;
+}
+
+.cls-2 {
+  fill: none;
+  stroke-width: 3px;
+}
+
+.cls-2,
+.cls-3 {
+  stroke: #231f20;
+}
+
+.cls-3 {
+  fill: #231f20;
 }
