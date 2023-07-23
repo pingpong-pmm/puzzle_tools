@@ -69,7 +69,7 @@ const Demos: NextPage = () => {
                 ))}
             </div>
 
-            <div className='p-8 max-h-screen flex gap-4'>
+            <div className='max-h-screen grid gap-4 p-4 max-w-lg w-full mx-auto'>
 
                 {/* <svg className='h-[70vh] w-full' id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.47 647.6">
 
@@ -80,8 +80,8 @@ const Demos: NextPage = () => {
                     <circle style={{ stroke: '#231f20', strokeMiterlimit: '10', fill: '#231f20' }} cx="46.74" cy="600.86" r="46.24" />
                 </svg>  */}
 
-                <div>
-                    <svg className='h-[70vh] w-full items-end grid' id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.47 647.6">
+                <div className='flex justify-between  gap-4 w-full'>
+                    <svg className='h-[70vh] items-end grid' id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.47 647.6">
                         <path style={{ fill: 'none', strokeWidth: '3px', stroke: '#231f20', strokeMiterlimit: '10' }} d="M381,271.48a21,21,0,1,0-42,0v537h42Z"
                             transform="translate(-313.26 -248.84)" />
                         <path height='10vh' style={{ transformOrigin: 'top', strokeMiterlimit: '10', fill: '#ed1c24', stroke: '#ed1c24' }} d={`M378.68,${808.52 - temp * 5}a18.68,18.68,0,1,0-37.36,0V${808.52}h37.36Z`}
@@ -90,10 +90,29 @@ const Demos: NextPage = () => {
 
                         <circle style={{ stroke: '#231f20', strokeMiterlimit: '10', fill: '#231f20' }} cx="46.74" cy="600.86" r="46.24" />
                     </svg>
-                    <div className='grid pt-4'>
-                        <label htmlFor='temp'>Change temp</label>
-                        <input id='temp' name='temp' type="number" placeholder='temperature' value={temp} onChange={(e: any) => setTemp(e.target.value)} />
-                    </div>
+                    <svg className='h-[70vh] items-end grid' id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.47 647.6">
+                        <path style={{ fill: 'none', strokeWidth: '3px', stroke: '#231f20', strokeMiterlimit: '10' }} d="M381,271.48a21,21,0,1,0-42,0v537h42Z"
+                            transform="translate(-313.26 -248.84)" />
+                        <path height='10vh' style={{ transformOrigin: 'top', strokeMiterlimit: '10', fill: '#ed1c24', stroke: '#ed1c24' }} d={`M378.68,${808.52 - temp * 5}a18.68,18.68,0,1,0-37.36,0V${808.52}h37.36Z`}
+                            transform="translate(-313.26 -248.84)" />
+                        {/* <rect style={{ strokeMiterlimit: '10', fill: '#ed1c24', stroke: '#fff' }} x="28.05" y={23.69} width="37.37" height="535.99" /> */}
+
+                        <circle style={{ stroke: '#231f20', strokeMiterlimit: '10', fill: '#231f20' }} cx="46.74" cy="600.86" r="46.24" />
+                    </svg>
+                    <svg className='h-[70vh] items-end grid' id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.47 647.6">
+                        <path style={{ fill: 'none', strokeWidth: '3px', stroke: '#231f20', strokeMiterlimit: '10' }} d="M381,271.48a21,21,0,1,0-42,0v537h42Z"
+                            transform="translate(-313.26 -248.84)" />
+                        <path height='10vh' style={{ transformOrigin: 'top', strokeMiterlimit: '10', fill: '#ed1c24', stroke: '#ed1c24' }} d={`M378.68,${808.52 - temp * 5}a18.68,18.68,0,1,0-37.36,0V${808.52}h37.36Z`}
+                            transform="translate(-313.26 -248.84)" />
+                        {/* <rect style={{ strokeMiterlimit: '10', fill: '#ed1c24', stroke: '#fff' }} x="28.05" y={23.69} width="37.37" height="535.99" /> */}
+
+                        <circle style={{ stroke: '#231f20', strokeMiterlimit: '10', fill: '#231f20' }} cx="46.74" cy="600.86" r="46.24" />
+                    </svg>
+                </div>
+                
+                <div className='grid gap-2 w-full'>
+                    <label htmlFor='temp'>change temp</label>
+                    <input id='temp' name='temp' type="number" placeholder='temp °C' value={temp} onChange={(e: any) => setTemp(e.target.value)} />
                 </div>
             </div>
         </>
