@@ -98,7 +98,7 @@ const Demos: NextPage = () => {
                             <path style={{ strokeWidth: '3px', fill: 'none', stroke: '#231f20', strokeMiterlimit: '10' }} d="M381,276.28a21,21,0,1,0-42,0v537h42Z"
                                 transform="translate(-310.42 -253.64)" />
 
-                            <rect style={{ fill: '#ed1c24' }} x="32.2" y={22.17 + (535.99 - 535.99 * temp / 100)} width="34.74" height={535.99 * temp / 100} />
+                            <rect style={{ fill: '#ed1c24' }} x="32.2" y={22.17 + (535.99 - 535.99 * temp / 99)} width="34.74" height={535.99 * temp / 99} />
                             {/* <rect style={{ fill: '#ed1c24' }} x="32.2" y={22.17 + 108 * 5 - temp * 6} width="34.74" height={535.99 - 108 * 5 + temp * 6} /> */}
 
                             <line style={{ fill: 'none', stroke: '#231f20', strokeMiterlimit: '10', strokeWidth: '0.5px' }} y1="22.17" x2="28.59" y2="22.17" />
@@ -300,7 +300,7 @@ const Demos: NextPage = () => {
                             <line style={{ fill: 'none', stroke: '#231f20', strokeMiterlimit: '10', strokeWidth: '0.5px' }} x1="84.86" y1="541.75" x2="70.56" y2="541.75" />
                             <line style={{ fill: 'none', stroke: '#231f20', strokeMiterlimit: '10', strokeWidth: '0.5px' }} x1="84.86" y1="552.69" x2="70.56" y2="552.69" />
 
-                            <circle style={{ fill: '#231f20', stroke: '#231f20', strokeMiterlimit: '10' }} cx="49.58" cy="600.77" r="46.24" />
+                            {/* <circle style={{ fill: '#231f20', stroke: '#231f20', strokeMiterlimit: '10' }} cx="49.58" cy="600.77" r="46.24" /> */}
                         </g>
                     </svg>
                 </div>
