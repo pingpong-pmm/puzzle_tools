@@ -300,7 +300,7 @@ const Demos: NextPage = () => {
                             <line style={{ fill: 'none', stroke: '#231f20', strokeMiterlimit: '10', strokeWidth: '0.5px' }} x1="84.86" y1="541.75" x2="70.56" y2="541.75" />
                             <line style={{ fill: 'none', stroke: '#231f20', strokeMiterlimit: '10', strokeWidth: '0.5px' }} x1="84.86" y1="552.69" x2="70.56" y2="552.69" />
 
-                            {/* <circle style={{ fill: '#231f20', stroke: '#231f20', strokeMiterlimit: '10' }} cx="49.58" cy="600.77" r="46.24" /> */}
+                            <circle style={{ fill: '#231f20', stroke: '#231f20', strokeMiterlimit: '10' }} cx="49.58" cy="600.77" r="46.24" />
                         </g>
                     </svg>
                 </div>
