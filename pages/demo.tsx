@@ -48,9 +48,32 @@ const Demos: NextPage = () => {
 
     const [view, setView] = useState(false)
     const [temp, setTemp] = useState(10)
+    const [angs, setAngs] = useState([])
 
+    // function getRandomAngle() {
+    //     return Math.floor(Math.random() * 181); // Generates a random angle between 0 and 180 (inclusive)
+    // }
+    // useEffect(() => {
 
-    let h = 400
+    function handleAngle() {
+        const angs = [];
+        let a1 = 0
+        let a2 = 0
+
+        for (let i = 0; i < 2; i++) {
+            // Generate random angles until they are not equal
+            do {
+                a1 = Math.floor(Math.random() * 179);
+                a2 = Math.floor(Math.random() * 179);
+            } while (a1 === 0 || a1 === 180 || a2 === 0 || a2 === 180 || a1 === a2 || a2 <= a1);
+
+            angs.push({ a1: a1, a2: a2 });
+        }
+        setAngs(angs)
+        // return angs;
+    }
+
+    // }, [])
 
     // Function to update the height percentage and limit it to the range of 0 to 100
     const handleHeightChange = (h: number) => {
@@ -82,16 +105,8 @@ const Demos: NextPage = () => {
 
             <div className='max-h-screen grid gap-4 p-4 max-w-lg w-full mx-auto'>
 
-                <div className='flex justify-between  gap-4 w-full'>
-                    {/*  <svg className='h-[70vh] items-end grid' id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.47 647.6">
-                        <path style={{ fill: 'none', strokeWidth: '3px', stroke: '#231f20', strokeMiterlimit: '10' }} d="M381,271.48a21,21,0,1,0-42,0v537h42Z"
-                            transform="translate(-313.26 -248.84)" />
-                        <path height='10vh' style={{ transformOrigin: 'top', strokeMiterlimit: '10', fill: '#ed1c24', stroke: '#ed1c24' }} d={`M378.68,${808.52 - temp * 5}a18.68,18.68,0,1,0-37.36,0V${808.52}h37.36Z`}
-                            transform="translate(-313.26 -248.84)" />
-                        <rect style={{ strokeMiterlimit: '10', fill: '#ed1c24', stroke: '#fff' }} x="28.05" y={23.69} width="37.37" height="535.99" />
+                <div className='hidden justify-between  gap-4 w-full'>
 
-                        <circle style={{ stroke: '#231f20', strokeMiterlimit: '10', fill: '#231f20' }} cx="46.74" cy="600.86" r="46.24" />
-                    </svg> */}
 
                     <svg height={535.99} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99.15 647.51">
                         <g id="circle">
@@ -305,7 +320,81 @@ const Demos: NextPage = () => {
                     </svg>
                 </div>
 
+                {angs.slice(0, 1).map((a, index) => (
+                    <div key={index}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 501.23 251.61">
+                            <g id="scales">
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="250.61" y2="1" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="230.22" y2="17.5" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="190.05" y2="24.58" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="151.72" y2="38.54" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="116.4" y2="58.93" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="85.15" y2="85.15" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="58.93" y2="116.4" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="38.54" y2="151.72" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="24.58" y2="190.05" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="17.5" y2="230.22" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="483.73" y2="230.22" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="476.65" y2="190.05" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="462.69" y2="151.72" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="442.3" y2="116.4" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="416.08" y2="85.15" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="384.83" y2="58.93" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="349.51" y2="38.54" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="311.18" y2="24.58" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="271.01" y2="17.5" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="207.27" y2="4.79" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="165.24" y2="16.05" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="125.81" y2="34.44" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="90.17" y2="59.4" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="59.4" y2="90.17" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="34.44" y2="125.81" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="16.05" y2="165.24" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="4.79" y2="207.27" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="496.44" y2="207.27" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="485.18" y2="165.24" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="466.79" y2="125.81" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="441.83" y2="90.17" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="411.06" y2="59.4" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="375.42" y2="34.44" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="335.99" y2="16.05" />
+                                <line style={{ fill: 'none', stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px' }} x1="250.61" y1="250.61" x2="293.96" y2="4.79" />
+                            </g>
+                            <g id="chaada">
+                                <path style={{ fill: 'none', strokeMiterlimit: '10', strokeWidth: '2px', stroke: '#231f20' }}
+                                    d="M609.61,637.67c0-137.86-111.75-249.62-249.61-249.62S110.39,499.81,110.39,637.67Z"
+                                    transform="translate(-109.39 -387.05)" />
+                                <path style={{ stroke: '#f90606', strokeMiterlimit: '10', strokeWidth: '2px', fill: '#fff' }}
+                                    d="M582.59,637.67c0-122.94-99.66-222.59-222.59-222.59S137.41,514.73,137.41,637.67Z"
+                                    transform="translate(-109.39 -387.05)" />
+                            </g>
+                            <g id="pointers">
+
+                                {/* <line style={{ fill: 'none', strokeMiterlimit: '10', strokeWidth: '2px', stroke: 'gray' }}
+                                    x1="250.61" y1="28.03" x2="250.61" y2="250.61"
+                                    transform="rotate(0 250.61 250.61)"
+                                /> */}
+
+                                <line style={{ fill: 'none', strokeMiterlimit: '10', strokeWidth: '2px', stroke: 'blue' }}
+                                    x1="250.61" y1="28.03" x2="250.61" y2="250.61"
+                                    transform={`rotate(${-a.a1 + 90} 250.61 250.61)`}
+                                />
+                                <line style={{ fill: 'none', strokeMiterlimit: '10', strokeWidth: '2px', stroke: 'green' }}
+                                    x1="250.61" y1="28.03" x2="250.61" y2="250.61"
+                                    transform={`rotate(${90 - a.a2} 250.61 250.61)`}
+                                />
+
+                                <path style={{ fill: 'none', strokeMiterlimit: '10', strokeWidth: '2px', stroke: '#231f20' }}
+                                    d="M582.59,637.67c0-122.94-99.66-222.59-222.59-222.59S137.41,514.73,137.41,637.67Z"
+                                    transform="translate(-109.39 -387.05)" />
+                            </g>
+                        </svg>
+                        <p className='pt-4 text-center'>Angle:{' '}{a.a2 - a.a1}°</p>
+                    </div>
+                ))}
+
                 <div className='grid gap-2 w-full'>
+                    <button type='button' onClick={handleAngle} >create angles</button>
                     <label htmlFor='temp'>change temp</label>
                     <input id='temp' name='temp' type="number" placeholder='temp °C' value={temp} onChange={(e: any) => setTemp(e.target.value)} />
                 </div>
