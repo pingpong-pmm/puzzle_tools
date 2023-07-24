@@ -55,14 +55,14 @@ export const data = {
       boardData: b_data,
       width: state.width,
       height: state.height,
-      mazeData: board_image,
+      // mazeData: board_image,
       path: [],
     };
     let solution = {
       boardData: b_data,
       width: state.width,
       height: state.height,
-      mazeData: solution_image,
+      // mazeData: solution_image,
       path: [],
     };
 
