@@ -45,9 +45,7 @@ export const data = {
     let th = new Thermoc(state.c)
     let b_data = th.makeData()
 
-    let link = localStorage.getItem("th_img")
-    let board_image = link
-    let solution_image = link;
+    // let link = localStorage.getItem("th_img")
     // let board_image = '/images/girl.jpg'
     // let solution_image = '/images/girl2.jpg';
 
