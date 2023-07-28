@@ -69,7 +69,7 @@ export const data = {
 
   viewerView: (data) => {
     let thermometer = data.board.board.boardData;
-    let link = localStorage.getItem("th_img")
+    // let link = localStorage.getItem("th_img")
 
 
     let sB =
@@ -78,13 +78,13 @@ export const data = {
         : data.showBoard;
 
     return sB ? (<>
-      {/* <img src={link} height={200} width={200} alt='hello' /> */}
       <Thermo show={!!false} temps={thermometer} />
     </>
     ) : (
       <Thermo show={!!true} temps={thermometer} />
     )
   },
+
   downloaderView: (data) => {
     let thermometer = data.board.boardData
     // let link = localStorage.getItem("th_img")
