@@ -6,5 +6,7 @@ export const boardDataCode = {
   "004": "Thermometer",
 
   "005": "Chada",
+  
+  "007": "Ruller",
 
 };

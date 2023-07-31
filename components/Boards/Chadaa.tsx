@@ -4,7 +4,7 @@ export function ChadaSVG(props: any) {
 
     let a1 = props.item.a1
     let a2 = props.item.a2
-    
+
 
     return (
 
@@ -56,18 +56,19 @@ export function ChadaSVG(props: any) {
             </g>
             <g id="pointers">
 
-                {/* <line style={{ fill: 'none', strokeMiterlimit: '10', strokeWidth: '2px', stroke: 'gray' }}
-                                    x1="250.61" y1="28.03" x2="250.61" y2="250.61"
-                                    transform="rotate(0 250.61 250.61)"
-                                /> */}
-
-                <line style={{ fill: 'none', strokeMiterlimit: '10', strokeWidth: '2px', stroke: 'black' }}
+                <line style={{
+                    fill: 'none', strokeMiterlimit: '10', strokeWidth: '2px', stroke: 'black', transformOrigin: '250.61px 250.61px',
+                    transition: 'transform 0.5s'
+                }}
                     x1="250.61" y1="28.03" x2="250.61" y2="250.61"
-                    transform={`rotate(${-a1 + 90} 250.61 250.61)`}
+                    transform={`rotate(${-a1 + 90})`}
                 />
-                <line style={{ fill: 'none', strokeMiterlimit: '10', strokeWidth: '2px', stroke: 'black' }}
+                <line style={{
+                    fill: 'none', strokeMiterlimit: '10', strokeWidth: '2px', stroke: 'black', transformOrigin: '250.61px 250.61px',
+                    transition: 'transform 0.5s'
+                }}
                     x1="250.61" y1="28.03" x2="250.61" y2="250.61"
-                    transform={`rotate(${90 - a2} 250.61 250.61)`}
+                    transform={`rotate(${90 - a2})`}
                 />
 
                 <path style={{ fill: 'none', strokeMiterlimit: '10', strokeWidth: '2px', stroke: 'black' }}
@@ -79,64 +80,8 @@ export function ChadaSVG(props: any) {
             ) : (
                 <text className="text-md font-semibold" x="220.61" y="280.61" fill="black" id="results">({props.x})____</text>
             )}
-            {/* <text className='text-xs text-center'>({props.x}) {props.shows ? (`${a2 - a1}°`) : ("_____")}</text> */}
-
         </svg>
 
 
-    )
-}
-
-export function ChadaQ(props: any) {
-    return (
-        <div className='grid justify-center bg-gray-50 rounded-md'>
-            <div className="relative flex justify-center rounded-t-full ring-1 ring-black h-28 w-56 bg-gray-100">
-                <div className='flex gap-[0.5px] h-28 relative justify-center'>
-
-                    <div style={{ transform: 'rotate(-85deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-80deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-75deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-70deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-65deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-60deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-55deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-50deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-45deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-40deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-35deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-30deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-25deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-20deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-15deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-10deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(-5deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-
-                    <div style={{ transform: 'rotate(0deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(5deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(10deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(15deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(20deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(25deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(30deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(35deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(40deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(45deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(50deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(55deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(60deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(65deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(70deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(75deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(80deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    <div style={{ transform: 'rotate(85deg)', transformOrigin: 'bottom' }} className='h-[130px] absolute bottom-0 p-[0.5px] bg-black z-20' />
-                    {/* <div style={{ transform: 'rotate(90deg)', transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-black z-20' /> */}
-                </div>
-                <div className='flex justify-center absolute bottom-0 rounded-t-full h-[120px] w-[240px] bg-white z-40'>
-                    <div style={{ transform: `rotate(${props.low}deg)`, transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-[red] z-20' />
-                    <div style={{ transform: `rotate(${props.high}deg)`, transformOrigin: 'bottom' }} className='h-full absolute bottom-0 p-[0.5px] bg-[red] z-20' />
-                </div>
-            </div>
-            <p className='text-xs text-center py-2'>({props.x}) {props.shows ? (<span className='border-b border-black'>{props.high - props.low}°</span>) : (<span>_____</span>)}</p>
-        </div>
     )
 }
