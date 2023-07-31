@@ -49,6 +49,13 @@ const boards = [
     link: "chada",
     categories: [categories.Numbergames, categories.Visualgames],
   },
+  {
+    title: "Ruller",
+    subtitle: "Find the value from given scales",
+    image: "ruller - Copy.PNG",
+    link: "ruller",
+    categories: [categories.Numbergames, categories.Visualgames],
+  },
 
 ];
 
