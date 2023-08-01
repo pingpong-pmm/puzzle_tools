@@ -248,8 +248,8 @@ export function RullerSVG(props: any) {
                     </g>
                 ) : (
                     <g>
-                        <text className='font-semibold' style={{ fontSize: '36px', fill: '#231f20', fontFamily: 'MyriadPro-Regular, Myriad Pro' }} transform="translate(0 140.29)">(1) ____</text>
-                        <text className='font-semibold' style={{ fontSize: '36px', fill: '#231f20', fontFamily: 'MyriadPro-Regular, Myriad Pro' }} transform="translate(1.34 440.29)">(2) ____</text>
+                        <text className='font-semibold' style={{ fontSize: '36px', fill: '#231f20', fontFamily: 'MyriadPro-Regular, Myriad Pro' }} transform="translate(0 140.29)">(1) _</text>
+                        <text className='font-semibold' style={{ fontSize: '36px', fill: '#231f20', fontFamily: 'MyriadPro-Regular, Myriad Pro' }} transform="translate(1.34 440.29)">(2) _</text>
                     </g>
                 )}
 
